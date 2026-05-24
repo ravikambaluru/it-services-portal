@@ -42,6 +42,18 @@
         <checkstyle.version>3.3.0</checkstyle.version>
     </properties>
 
+    <!-- GitHub Packages Deployment -->
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>
+                https://maven.pkg.github.com/lerndevops/it-services-portal
+            </url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
 
         <!-- Servlet API -->
