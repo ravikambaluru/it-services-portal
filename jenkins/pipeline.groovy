@@ -4,7 +4,7 @@ pipeline{
 
     tools {
         jdk 'JDK21'
-        mvn 'Maven3'
+        maven 'Maven3'
     }
 
     stages {
