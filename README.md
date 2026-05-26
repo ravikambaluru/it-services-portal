@@ -359,7 +359,7 @@ chmod 755 data/
 
 ## License
 
-This project is provided as-is for educational and business purposes.
+This project is provided as-is for educational and business purpose.
 
 ## Support
 
