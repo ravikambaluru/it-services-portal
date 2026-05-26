@@ -4,18 +4,28 @@ pipeline{
 
     tools {
         jdk 'JDK21'
-        maven 'Maven3'
+        maven 'Maven'
     }
 
     stages {
         stage('Clean WS'){
-            cleanWs();
+
+            steps {
+                cleanWs();
+            }
+
         }
         stage('Clone Repo'){
-            git branch: 'main', url: 'https://github.com/ravikambaluru/it-services-portal'
+            steps {
+                git branch: 'main', url: 'https://github.com/ravikambaluru/it-services-portal'
+            }
         }
         stage('Compile Code'){
-            sh 'mvn compile'
+
+            steps {
+                sh 'mvn compile'
+            }
+
         }
     }
 
