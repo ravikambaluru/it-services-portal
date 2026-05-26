@@ -10,7 +10,6 @@
     <artifactId>it-services-portal</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-
     <name>IT Services Portal</name>
     <description>Java Web Application for IT Services with User Authentication</description>
 
