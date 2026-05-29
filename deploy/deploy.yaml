@@ -1,5 +1,5 @@
 - name: deploy to kube cluster
-  hosts: dev
+  hosts: "{{ env }}"
   tasks: 
     - name: clone the cd repo
       git:
@@ -10,3 +10,4 @@
        update: yes
     - name: deploy application 
       shell: "kubectl apply -f /opt/it-services-portal/k8s-deploy/releases/dev/*.yaml"
+      when: env == "dev"
