@@ -1,0 +1,19 @@
+- name: deploy to kube cluster
+  hosts: "{{ env }}"
+  tasks: 
+    - name: clone the cd repo
+      git:
+       repo: "https://github.com/lerndevops/it-services-portal-cd.git"
+       dest: "/home/devops/it-services-portal-cd"
+       version: "plain-yaml"
+       clone: yes
+       update: yes
+    - name: deploy application 
+      shell: "cd /home/devops/it-services-portal-cd/k8s-deploy/releases/dev ; kubectl apply -f ."
+      when: env == "dev"
+    - name: deploy application 
+      shell: "cd /home/devops/it-services-portal-cd/k8s-deploy/releases/uat ; kubectl apply -f ."
+      when: env == "uat"
+    - name: deploy application 
+      shell: "cd /home/devops/it-services-portal-cd/k8s-deploy/releases/prod ; kubectl apply -f ."
+      when: env == "prod"
