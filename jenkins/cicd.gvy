@@ -121,24 +121,14 @@ pipeline {
 
                     sh '''
                         docker build \
-                          -t docker.io/lerndevops/it-services-portal:${BUILD_NUMBER} \
+                          -t docker.io/lerndevops/it-services-portal:latest \
                           .
 
                         docker push \
-                          docker.io/lerndevops/it-services-portal:${BUILD_NUMBER}
+                          docker.io/lerndevops/it-services-portal:latest
                     '''
                 }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline completed successfully.'
-        }
-
-        failure {
-            echo 'Pipeline failed.'
         }
     }
 }
