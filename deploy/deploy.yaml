@@ -9,11 +9,11 @@
        clone: yes
        update: yes
     - name: deploy application 
-      shell: "kubectl apply -f /home/devops/it-services-portal-cd/k8s-deploy/releases/dev/*.yaml"
+      shell: "cd /home/devops/it-services-portal-cd/k8s-deploy/releases/dev ; kubectl apply -f *.yaml"
       when: env == "dev"
     - name: deploy application 
-      shell: "kubectl apply -f /home/devops/it-services-portal-cd/k8s-deploy/releases/uat/*.yaml"
+      shell: "cd /home/devops/it-services-portal-cd/k8s-deploy/releases/dev ; kubectl apply -f *.yaml"
       when: env == "uat"
     - name: deploy application 
-      shell: "kubectl apply -f /home/devops/it-services-portal-cd/k8s-deploy/releases/prod/*.yaml"
+      shell: "cd /home/devops/it-services-portal-cd/k8s-deploy/releases/dev ; kubectl apply -f *.yaml"
       when: env == "prod"
