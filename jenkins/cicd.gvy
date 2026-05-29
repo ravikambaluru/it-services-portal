@@ -126,7 +126,7 @@ pipeline {
         }
         stage('deploy-to-dev') {
 	         steps {
-                    sh script: 'sudo ansible-playbook --inventory /tmp/myinv $WORKSPACE/deploy/deploy.yml --extra-vars "env=dev'
+                    sh script: 'sudo ansible-playbook --inventory /tmp/myinv $WORKSPACE/deploy/deploy.yml --extra-vars "env=dev'"
            }		
         }
     }
