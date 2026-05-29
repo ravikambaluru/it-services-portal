@@ -118,8 +118,8 @@ pipeline {
                 ) {
 
                     sh '''
-                        docker build -t docker.io/lerndevops/it-services-portal:latest .
-                        docker push docker.io/lerndevops/it-services-portal:latest
+                        docker build -t docker.io/ravikblr/it-services-portal:latest .
+                        docker push docker.io/ravikblr/it-services-portal:latest
                     '''
                 }
             }
